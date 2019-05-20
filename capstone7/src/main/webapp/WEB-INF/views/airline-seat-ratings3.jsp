@@ -38,14 +38,14 @@
 	
 </head>
 <body>
-<<header id="header">
+<header id="header">
 				<div class="header-top">
 					<div class="container">
 			  		<div class="row align-items-center">
 			  			<div class="col-lg-6 col-sm-6 col-6 header-top-left">
 			  				<ul>
-			  					<li><a href="#">Visit Us</a></li>
-			  					<li><a href="#">Buy Tickets</a></li>
+			  					<li><a href="#"></a></li>
+			  					<li><a href="#"></a></li>
 			  				</ul>			
 			  			</div>
 			  			<div class="col-lg-6 col-sm-6 col-6 header-top-right">
@@ -73,24 +73,20 @@
 				          <li><a href="admin">Admin</a></li>
 				          </c:if>
 				          <li><a href="airline-seat-ratings3">Seat Ratings</a></li>
-				          <li><a href=""></a></li>
+				          <!-- <li><a href=""></a></li> -->
 				          <li class="menu-has-children"><a href="">Blog</a>
 				            <ul>
 				              <li><a href="blog-home.html">Blog Home</a></li>
 				              <li><a href="blog-single.html">Blog Single</a></li>
 				            </ul>
 				          </li>	
-				          <li class="menu-has-children"><a href="">Pages</a>
+				          <%-- <c:if test="${loggedInFlier eq true}">
+				         <li class="menu-has-children"><a href="yourReps">Congress</a>
 				            <ul>
-				            	  <li><a href="elements.html">Elements</a></li>
-						          <li class="menu-has-children"><a href="">Level 2 </a>
-						            <ul>
-						              <li><a href="#">Item One</a></li>
-						              <li><a href="#">Item Two</a></li>
-						            </ul>
-						          </li>					                		
+				            	  <li><a href="yourReps">Your Reps</a></li>
+						          				                		
 				            </ul>
-				          </li>					          					          		          
+				          </li>		</c:if>		 --%>	          					          		          
 				          <li><a href="contact">Contact</a></li>				          
 				          <c:if test="${loggedInFlier.getFirstName()!=null}">
 				          <li><a href="/logout">Logout</a></li>
@@ -197,8 +193,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${JetBlueLegroomSum/JetBlue.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${JetBlueSumTall/2}"/></span></span>
 										</li>
 																
 										<li class="d-flex justify-content-between align-items-center">
@@ -268,8 +264,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${SouthwestLegroomSum/Southwest.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${SouthwestSumTall/2}"/></span>
 										</li>
 																	
 										<li class="d-flex justify-content-between align-items-center">
@@ -339,8 +335,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${AlaskaLegroomSum/Alaska.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${AlaskaSumTall/2}"/></span>
 										</li>
 										
 																						
@@ -373,28 +369,28 @@
 											
 										<c:if test="${AmericanSum/2>= 2}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${AmericanSum/2 < 2 && !(DeltaSum/2 >=1.5  && DeltaSum/2<2)}">	
+										<c:if test="${AmericanSum/2 < 2 && !(AmericanSum/2 >=1.5  && AmericanSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${AmericanSum/2 >= 2.5 && AmericanSum/2 <3}">
 										 	<span class="fa fa-star-half checked"></span></c:if>
 										 	
 										<c:if test="${AmericanSum/2 >= 3}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${AmericanSum/2 < 3 && !(DeltaSum/2 >=1.5  && DeltaSum/2<2)}">	
+										<c:if test="${AmericanSum/2 < 3 && !(AmericanSum/2 >=1.5  && AmericanSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${AmericanSum/2 >= 3.5 && AmericanSum/2<4}">
 										 	<span class="fa fa-star-half checked"></span></c:if> 
 										 	
 										<c:if test="${AmericanSum/2 >= 4}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${AmericanSum/2< 4 && !(DeltaSum/2 >=1.5  && DeltaSum/2<2)}">	
+										<c:if test="${AmericanSum/2< 4 && !(AmericanSum/2 >=1.5  && AmericanSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${AmericanSum/2 >= 4.5 && AmericanSum/2<5}">
 										 	<span class="fa fa-star-half checked"></span></c:if>  		
 											
 										<c:if test="${AmericanSum/2 >= 5}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${AmericanSum/2< 5 && !(DeltaSum/2 >=1.5  && DeltaSum/2<2)}">	
+										<c:if test="${AmericanSum/2< 5 && !(AmericanSum/2 >=1.5  && AmericanSum/2 <2)}">	
 											<span class="fa fa-star"></span></c:if>					
 										</div>	
 									</h4>
@@ -411,8 +407,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${AmericanLegroomSum/American.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${AmericanSumTall/2}"/></span>
 										</li>
 																						
 										<li class="d-flex justify-content-between align-items-center">
@@ -483,8 +479,8 @@
 										</li>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${UnitedSumTall/2}"/></span>
 										</li>
 																					
 										<li class="d-flex justify-content-between align-items-center">
@@ -554,8 +550,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${DeltaLegroomSum/Delta.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${DeltaSumTall/2}"/></span>
 										</li>
 																						
 										<li class="d-flex justify-content-between align-items-center">
@@ -588,28 +584,28 @@
 											
 										<c:if test="${HawaiianSum/2>= 2}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${HawaiianSum/2 < 2 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${HawaiianSum/2 < 2 && !(HawaiianSum/2 >=1.5  && HawaiianSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${HawaiianSum/2 >= 2.5 && HawaiianSum/2 <3}">
 										 	<span class="fa fa-star-half checked"></span></c:if>
 										 	
 										<c:if test="${HawaiianSum/2 >= 3}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${HawaiianSum/2 < 3 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${HawaiianSum/2 < 3 && !(HawaiianSum/2 >=2.5  && HawaiianSum/2<3)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${HawaiianSum/2 >= 3.5 && HawaiianSum/2<4}">
 										 	<span class="fa fa-star-half checked"></span></c:if> 
 										 	
 										<c:if test="${HawaiianSum/2 >= 4}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${HawaiianSum/2< 4 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${HawaiianSum/2< 4 && !(HawaiianSum/2 >=3.5  && HawaiianSum/2<4)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${HawaiianSum/2 >= 4.5 && HawaiianSum/2<5}">
 										 	<span class="fa fa-star-half checked"></span></c:if>  		
 											
 										<c:if test="${HawaiianSum/2 >= 5}">
 											<span class="fa fa-star checked"></span></c:if>	
-									  	<c:if test="${HawaiianSum/2< 5 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+									  	<c:if test="${HawaiianSum/2< 5 && !(HawaiianSum/2 >=4.5  && HawaiianSum/2<5)}">	
 											<span class="fa fa-star"></span></c:if>			
 										</div>	
 									</h4>
@@ -626,8 +622,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${HawaiianLegroomSum/Hawaiian.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${HawaiianSumTall/2}"/></span>
 										</li>
 																						
 										<li class="d-flex justify-content-between align-items-center">
@@ -660,28 +656,28 @@
 											
 										<c:if test="${FrontierSum/2>= 2}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${FrontierSum/2 < 2 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${FrontierSum/2 < 2 && !(FrontierSum/2 >=1.5  && FrontierSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${FrontierSum/2 >= 2.5 && FrontierSum/2<3}">
 										 	<span class="fa fa-star-half checked"></span></c:if>
 										 	
 										<c:if test="${FrontierSum/2 >= 3}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${FrontierSum/2 < 3 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${FrontierSum/2 < 3 && !(FrontierSum/2 >=2.5  && FrontierSum/2<3)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${FrontierSum/2 >= 3.5 && FrontierSum/2<4}">
 										 	<span class="fa fa-star-half checked"></span></c:if> 
 										 	
 										<c:if test="${FrontierSum/2 >= 4}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${FrontierSum/2< 4 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${FrontierSum/2< 4 && !(FrontierSum/2 >=3.5  && FrontierSum/2<4)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${FrontierSum/2 >= 4.5 && FrontierSum/2<5}">
 										 	<span class="fa fa-star-half checked"></span></c:if>  		
 											
 										<c:if test="${FrontierSum/2 >= 5}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${FrontierSum/2< 5 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${FrontierSum/2< 5 && !(FrontierSum/2 >=4.5  && FrontierSum/2<5)}">	
 											<span class="fa fa-star"></span></c:if>					
 										</div>	
 									</h4>
@@ -698,8 +694,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${FrontierLegroomSum/Frontier.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${FrontierSumTall/2}"/></span>
 										</li>
 																						
 										<li class="d-flex justify-content-between align-items-center">
@@ -732,28 +728,28 @@
 											
 										<c:if test="${SpiritSum/2>= 2}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${SpiritSum/2 < 2 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${SpiritSum/2 < 2 && !(SpiritSum/2 >=1.5  && SpiritSum/2<2)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${SpiritSum/2 >= 2.5 && SpiritSum/2 <3}">
 										 	<span class="fa fa-star-half checked"></span></c:if>
 										 	
 										<c:if test="${SpiritSum/2 >= 3}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${SpiritSum/2 < 3 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${SpiritSum/2 < 3 && !(SpiritSum/2 >=2.5  && SpiritSum/2<3)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${SpiritSum/2 >= 3.5 && SpiritSum/2<4}">
 										 	<span class="fa fa-star-half checked"></span></c:if> 
 										 	
 										<c:if test="${SpiritSum/2 >= 4}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${SpiritSum/2< 4 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${SpiritSum/2< 4 && !(SpiritSum/2 >=3.5  && SpiritSum/2<4)}">	
 											<span class="fa fa-star"></span></c:if>
 										<c:if test="${SpiritSum/2 >= 4.5 && SpiritSum/2<5}">
 										 	<span class="fa fa-star-half checked"></span></c:if>  		
 											
 										<c:if test="${SpiritSum/2 >= 5}">
 											<span class="fa fa-star checked"></span></c:if>	
-										<c:if test="${DeltaSum/2< 5 && !(DeltaSum/2 >=4.5  && DeltaSum/2<5)}">	
+										<c:if test="${SpiritSum/2< 5 && !(SpiritSum/2 >=4.5  && SpiritSum/2<5)}">	
 											<span class="fa fa-star"></span></c:if> 				
 										</div>	
 									</h4>
@@ -770,8 +766,8 @@
 											<span><fmt:formatNumber type="number" maxFractionDigits="1" value="${SpiritLegroomSum/Spirit.size()}"/></span>
 										</li>
 										<li class="d-flex justify-content-between align-items-center">
-											<span>Wi-fi</span>
-											<span>Yes</span>
+											<span>Height Adjusted</span>
+											<span><span><fmt:formatNumber type="number" maxFractionDigits="1" value="${SpiritSumTall/2}"/></span></span>
 										</li>
 																						
 										<li class="d-flex justify-content-between align-items-center">

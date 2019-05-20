@@ -9,8 +9,8 @@
 			  		<div class="row align-items-center">
 			  			<div class="col-lg-6 col-sm-6 col-6 header-top-left">
 			  				<ul>
-			  					<li><a href="#">Visit Us</a></li>
-			  					<li><a href="#">Buy Tickets</a></li>
+			  					<li><a href="#"></a></li>
+			  					<li><a href="#"></a></li>
 			  				</ul>			
 			  			</div>
 			  			<div class="col-lg-6 col-sm-6 col-6 header-top-right">
@@ -27,7 +27,7 @@
 				<div class="container main-menu">
 					<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
-				        <a href="index"><img src="Styles/travel/img/logo.png" alt="" title="" /></a>
+				        <a href="index"><img src="Styles/travel/img/logo.png" alt="" title="KneeSaver" /></a>
 				      </div>
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
@@ -35,24 +35,23 @@
 				          <li><a href="about">About</a></li>
 				          
 				          <li><a href="/airline-seat-ratings3">Seat Ratings</a></li>
-				          <li><a href=""></a></li>
+				          <c:if test="${loggedInFlier.role eq 'Admin'}">
+				          <li><a href="admin">Admin</a></li>
+				          </c:if>
+				          <!-- <li><a href=""></a></li> -->
 				          <li class="menu-has-children"><a href="">Blog</a>
 				            <ul>
 				              <li><a href="blog-home.html">Blog Home</a></li>
 				              <li><a href="blog-single.html">Blog Single</a></li>
 				            </ul>
-				          </li>	
-				          <li class="menu-has-children"><a href="">Pages</a>
+				          </li>
+							<c:if test="${loggedInFlier eq true}">
+				          <li class="menu-has-children"><a href="yourReps">Congress</a>
 				            <ul>
-				            	  <li><a href="elements.html">Elements</a></li>
-						          <li class="menu-has-children"><a href="">Level 2 </a>
-						            <ul>
-						              <li><a href="#">Item One</a></li>
-						              <li><a href="#">Item Two</a></li>
-						            </ul>
-						          </li>					                		
+				            	  <li><a href="yourReps">Your Reps</a></li>
+						          				                		
 				            </ul>
-				          </li>					          					          		          
+				          </li>		</c:if>			          					          		          
 				          <li><a href="contact">Contact</a></li>				          
 				          
 				        </ul>

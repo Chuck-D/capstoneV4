@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Travel</title>
+		<title>KneeSaver</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -53,16 +53,16 @@
 			<section class="contact-page-area section-gap">
 				<div class="container">
 					<div class="row">
-						<div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
+						<!-- <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div> -->
 						<div class="col-lg-4 d-flex flex-column address-wrap">
 							<div class="single-contact-address d-flex flex-row">
 								<div class="icon">
 									<span class="lnr lnr-home"></span>
 								</div>
 								<div class="contact-details">
-									<h5>Binghamton, New York</h5>
+									<h5>Kansas City, KS</h5>
 									<p>
-										4343 Hinkle Deegan Lake Road
+										343 Forest Lake Road
 									</p>
 								</div>
 							</div>
@@ -71,7 +71,7 @@
 									<span class="lnr lnr-phone-handset"></span>
 								</div>
 								<div class="contact-details">
-									<h5>00 (958) 9865 562</h5>
+									<h5>913-256-9004</h5>
 									<p>Mon to Fri 9am to 6 pm</p>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
 									<span class="lnr lnr-envelope"></span>
 								</div>
 								<div class="contact-details">
-									<h5>support@colorlib.com</h5>
+									<h5>support@kneesaver.com</h5>
 									<p>Send us your query anytime!</p>
 								</div>
 							</div>														

@@ -28,6 +28,7 @@ import com.claim.entity.Flier;
 import com.claim.entity.Survey;
 import com.claim.repository.AirlineRepo;
 import com.claim.repository.FlierRepo;
+import com.claim.repository.SenatorsRepo;
 import com.claim.repository.SurveyRepo;
 import com.twilio.rest.chat.v1.service.User;
 
@@ -35,6 +36,9 @@ import com.twilio.rest.chat.v1.service.User;
 @Controller
 @SessionAttributes("loggedInFlier")
 public class HomeController {
+	
+	@Autowired
+	SenatorsRepo senatorsRepo;
 	
 	@Autowired
 	FlierRepo inRepo;
@@ -149,7 +153,30 @@ public class HomeController {
 				 session.setAttribute("SpiritComfortSum", surveyRepo.sumOfComfortRatings("Spirit"));
 				 session.setAttribute("SpiritLegroomSum", surveyRepo.sumOfLegroomRatings("Spirit"));
 				 session.setAttribute("SpiritSum", surveyRepo.sumOfRatings("Spirit"));
+				
+				 session.setAttribute("FrontierSumTall",surveyRepo.sumOfRatings2("Frontier"));
+				 session.setAttribute("HawaiianSumTall",surveyRepo.sumOfRatings2("Hawaiian")); 
+				 session.setAttribute("DeltaSumTall", surveyRepo.sumOfRatings2("Delta")); 
+				 session.setAttribute("JetBlueSumTall", surveyRepo.sumOfRatings2("JetBlue")); 
+				 session.setAttribute("UnitedSumTall", surveyRepo.sumOfRatings2("United")); 
+				 session.setAttribute("AmericanSumTall", surveyRepo.sumOfRatings2("American")); 
+				 session.setAttribute("AlaskaSumTall", surveyRepo.sumOfRatings2("Alaska")); 
+				 session.setAttribute("SouthwestSumTall", surveyRepo.sumOfRatings2("Southwest")); 
+				 session.setAttribute("SpiritSumTall", surveyRepo.sumOfRatings2("Spirit"));
 				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 
+				 /*
+				 * session.setAttribute("senator1", senatorsRepo.senator1(1));
+				 * session.setAttribute("senator2", senatorsRepo.senator2(2));
+				 */
 				 
 				 
 				 
@@ -187,7 +214,7 @@ public class HomeController {
     	status.setComplete();
     	redirect.addFlashAttribute("loggedInFlier", WebRequest.SCOPE_SESSION);
     	redirect.addFlashAttribute("msg", "You have been signed out");
-    	return "You have signed out <a href=\"index\">Home</a>";
+    	return "You have signed out. Return to <a href=\"index\">Home</a> page?";
 	 }
 	 
 	 
@@ -242,6 +269,19 @@ public class HomeController {
 			model.addAttribute("SpiritComfortSum", surveyRepo.sumOfComfortRatings("Spirit"));
 			model.addAttribute("SpiritLegroomSum", surveyRepo.sumOfLegroomRatings("Spirit"));
 			model.addAttribute("SpiritSum", surveyRepo.sumOfRatings("Spirit"));
+			
+			model.addAttribute("SpiritSumTall", surveyRepo.sumOfRatings2("Spirit"));
+		    model.addAttribute("FrontierSumTall", surveyRepo.sumOfRatings2("Frontier"));
+		    model.addAttribute("HawaiianSumTall", surveyRepo.sumOfRatings2("Hawaiian"));
+		    model.addAttribute("DeltaSumTall", surveyRepo.sumOfRatings2("Delta"));
+		    model.addAttribute("JetBlueSumTall", surveyRepo.sumOfRatings2("JetBlue"));
+			model.addAttribute("UnitedSumTall", surveyRepo.sumOfRatings2("United"));
+			model.addAttribute("AmericanSumTall", surveyRepo.sumOfRatings2("American"));
+			model.addAttribute("AlaskaSumTall", surveyRepo.sumOfRatings2("Alaska"));
+			model.addAttribute("SouthwestSumTall", surveyRepo.sumOfRatings2("Southwest"));
+			 
+			
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -267,6 +307,25 @@ public class HomeController {
 		 public ModelAndView survey() {
 		 
 		 return new ModelAndView("survey");
-	 }
+		 
+		 	 }
+	 @RequestMapping("/logout")
+	 public ModelAndView logout() {
+	 
+	 return new ModelAndView("index");}
+	 
+	 @RequestMapping(value="/yourReps", method = RequestMethod.GET)
+	 public String yourReps(Model model) {
+		 /* will tie to an API or use a JSON file later
+		  * this will be used until I update after presentation.
+		  * 
+		  */
+		
+		 model.addAttribute("senator1", senatorsRepo.senatorNameByID(1));
+		 model.addAttribute("senator2", senatorsRepo.senatorNameByID(2));
+		
+			 
+	 
+	 return ("yourReps");}
 	 
 }
